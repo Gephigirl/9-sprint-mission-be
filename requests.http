@@ -1,0 +1,51 @@
+### 전체 상품 목록 조회 (페이지 1, 5개씩)
+GET http://localhost:4000/api/products?page=2&limit=1
+Accept: application/json
+
+###
+GET http://localhost:4000/api/products?page=1&limit=3&sort=recent&search=청소기
+Accept: application/json
+
+### 전체 상품 목록 조회 + 검색
+GET http://localhost:4000/api/products?search=컵
+Accept: application/json
+
+###
+
+GET http://localhost:4000/api/products?sort=recent
+Accept: application/json
+
+### 상품 상세 조회 
+GET http://localhost:4000/api/products/68d4d5c0ac36a9de79ae1fa3
+Accept: application/json
+
+###
+
+### 상품 등록
+POST http://localhost:4000/api/products
+Content-Type: application/json
+
+{
+  "name": "Celular",
+  "price": 12000000,
+  "image": "images/default-product.png",
+  "tags": ["Test51","Hate"],
+  "likeCount": 777
+}
+
+###
+
+### 상품 수정 
+PATCH http://localhost:4000/api/products/68d4dc9f030dda80ecc9ce7c
+Content-Type: application/json
+
+{
+  "price": 111112,
+  "likeCount": 77,
+  "__v": 2
+}
+
+###
+
+### 상품 삭제 
+DELETE http://localhost:4000/api/products/68d4d72ee9a83c7325ee4ac1
